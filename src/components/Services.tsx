@@ -1,7 +1,11 @@
 import { Wrench, Package, Droplets, Settings, ShoppingCart, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import installationImage from "@/assets/service-installation.jpg";
-import maintenanceImage from "@/assets/service-maintenance.jpg";
+import purifierImage from "@/assets/service-purifier.jpg";
+import filtersImage from "@/assets/service-filters.jpg";
+import installationImage from "@/assets/service-installation-new.jpg";
+import sanitizationImage from "@/assets/service-sanitization.jpg";
+import maintenanceImage from "@/assets/service-maintenance-new.jpg";
+import watercoolerImage from "@/assets/service-watercooler.jpg";
 
 const Services = () => {
   const services = [
@@ -9,13 +13,13 @@ const Services = () => {
       icon: ShoppingCart,
       title: "Venda de purificadores",
       description: "Purificadores de água de alta qualidade para sua casa ou empresa",
-      image: installationImage,
+      image: purifierImage,
     },
     {
       icon: Package,
       title: "Filtros e refis",
       description: "Filtros de entrada, refis e peças originais de reposição",
-      image: null,
+      image: filtersImage,
     },
     {
       icon: Wrench,
@@ -27,7 +31,7 @@ const Services = () => {
       icon: Sparkles,
       title: "Higienização",
       description: "Limpeza e higienização completa dos equipamentos",
-      image: maintenanceImage,
+      image: sanitizationImage,
     },
     {
       icon: Settings,
@@ -39,7 +43,7 @@ const Services = () => {
       icon: Droplets,
       title: "Bebedouros",
       description: "Venda e instalação de bebedouros para ambientes corporativos",
-      image: null,
+      image: watercoolerImage,
     },
   ];
 
