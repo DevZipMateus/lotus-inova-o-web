@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import lotusLogo from "@/assets/lotus-logo.png";
+import lotusLogo from "@/assets/lotus-logo-real.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,11 +40,8 @@ const Header = () => {
             <img 
               src={lotusLogo} 
               alt="Logo Lotus Inovação" 
-              className="h-12 w-12"
+              className="h-14 w-auto"
             />
-            <span className="text-xl font-bold text-primary">
-              Lotus Inovação
-            </span>
           </div>
 
           {/* Desktop Menu */}
