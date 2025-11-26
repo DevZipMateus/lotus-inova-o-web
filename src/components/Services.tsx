@@ -58,27 +58,27 @@ const Services = () => {
   };
 
   return (
-    <section id="servicos" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+    <section id="servicos" className="py-12 sm:py-16 md:py-20 bg-background">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">
             Nossos serviços
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
             Soluções completas para garantir água pura e de qualidade
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto mb-8 sm:mb-12">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <div
                 key={index}
-                className="group bg-card rounded-2xl overflow-hidden shadow-elegant hover:shadow-glow transition-all duration-300 border border-border"
+                className="group bg-card rounded-xl sm:rounded-2xl overflow-hidden shadow-elegant hover:shadow-glow transition-all duration-300 border border-border"
               >
                 {service.image && (
-                  <div className="h-48 overflow-hidden">
+                  <div className="h-40 sm:h-48 overflow-hidden">
                     <img
                       src={service.image}
                       alt={service.title}
@@ -86,14 +86,14 @@ const Services = () => {
                     />
                   </div>
                 )}
-                <div className={service.image ? "p-6" : "p-8"}>
-                  <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-                    <Icon className="text-primary h-7 w-7" />
+                <div className={service.image ? "p-5 sm:p-6" : "p-6 sm:p-8"}>
+                  <div className="bg-primary/10 w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+                    <Icon className="text-primary h-6 w-6 sm:h-7 sm:w-7" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3">
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     {service.description}
                   </p>
                 </div>
@@ -106,7 +106,7 @@ const Services = () => {
           <Button
             size="lg"
             onClick={scrollToContact}
-            className="bg-primary text-primary-foreground hover:bg-accent shadow-glow text-lg px-8"
+            className="bg-primary text-primary-foreground hover:bg-accent shadow-glow text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
           >
             Solicite um orçamento
           </Button>

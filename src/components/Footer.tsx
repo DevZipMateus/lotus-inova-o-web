@@ -17,19 +17,19 @@ const Footer = () => {
 
   return (
     <footer className="bg-background border-t border-border">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 md:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Logo e Descrição */}
-          <div className="space-y-4">
-            <img src={lotusLogo} alt="Logo Lotus Inovação" className="h-20 w-auto" />
-            <p className="text-muted-foreground text-sm">
+          <div className="space-y-3 sm:space-y-4">
+            <img src={lotusLogo} alt="Logo Lotus Inovação" className="h-16 sm:h-20 w-auto" />
+            <p className="text-muted-foreground text-xs sm:text-sm">
               Soluções completas em purificação de água com qualidade, tecnologia e sustentabilidade.
             </p>
           </div>
 
           {/* Navegação */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Navegação</h3>
+            <h3 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Navegação</h3>
             <ul className="space-y-2">
               <li>
                 <button
@@ -68,7 +68,7 @@ const Footer = () => {
 
           {/* Contato */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Contato</h3>
+            <h3 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Contato</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
@@ -96,7 +96,7 @@ const Footer = () => {
 
           {/* Redes Sociais */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Redes sociais</h3>
+            <h3 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base">Redes sociais</h3>
             <div className="flex gap-4">
               <a
                 href="https://www.instagram.com/lotus_purificadores"
@@ -121,12 +121,12 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
+        <div className="mt-8 sm:mt-10 md:mt-12 pt-6 sm:pt-8 border-t border-border">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-center sm:text-left">
+            <p className="text-xs sm:text-sm text-muted-foreground">
               © {new Date().getFullYear()} Lotus Inovação. Todos os direitos reservados.
             </p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs sm:text-sm text-muted-foreground">
               CNPJ: 32.494.345/0001-35
             </p>
           </div>

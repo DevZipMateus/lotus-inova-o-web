@@ -19,7 +19,7 @@ const Hero = () => {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center pt-44 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center pt-32 sm:pt-36 md:pt-40 lg:pt-44 overflow-hidden"
     >
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
@@ -32,39 +32,39 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-3xl">
-          <div className="flex items-center gap-2 mb-6 animate-fade-in">
-            <Droplet className="text-primary h-8 w-8" />
-            <span className="text-primary font-semibold text-lg">
+          <div className="flex items-center gap-2 mb-4 sm:mb-6 animate-fade-in">
+            <Droplet className="text-primary h-6 w-6 sm:h-8 sm:w-8" />
+            <span className="text-primary font-semibold text-base sm:text-lg">
               Água pura para sua saúde
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 animate-fade-in leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 animate-fade-in leading-tight">
             Lotus Inovação
           </h1>
 
-          <h2 className="text-2xl md:text-3xl text-muted-foreground mb-8 animate-fade-in font-light">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-6 sm:mb-8 animate-fade-in font-light">
             Soluções completas em purificação de água com qualidade, tecnologia e sustentabilidade
           </h2>
 
-          <div className="flex flex-wrap gap-6 mb-12 animate-fade-in">
+          <div className="flex flex-wrap gap-4 sm:gap-6 mb-8 sm:mb-12 animate-fade-in">
             <div className="flex items-center gap-2 text-foreground">
-              <Shield className="text-primary h-5 w-5" />
-              <span className="font-medium">Água 100% pura</span>
+              <Shield className="text-primary h-4 w-4 sm:h-5 sm:w-5" />
+              <span className="font-medium text-sm sm:text-base">Água 100% pura</span>
             </div>
             <div className="flex items-center gap-2 text-foreground">
-              <Sparkles className="text-primary h-5 w-5" />
-              <span className="font-medium">Tecnologia avançada</span>
+              <Sparkles className="text-primary h-4 w-4 sm:h-5 sm:w-5" />
+              <span className="font-medium text-sm sm:text-base">Tecnologia avançada</span>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in">
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="bg-primary text-primary-foreground hover:bg-accent shadow-glow text-lg px-8"
+              className="bg-primary text-primary-foreground hover:bg-accent shadow-glow text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
             >
               Solicite um orçamento
             </Button>
@@ -72,7 +72,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               onClick={() => navigate("/vitrine")}
-              className="border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8"
+              className="border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
             >
               Ver vitrine de produtos
             </Button>
