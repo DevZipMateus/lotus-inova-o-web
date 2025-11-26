@@ -7,7 +7,8 @@ const Vitrine = () => {
   useEffect(() => {
     const calculateHeight = () => {
       const headerHeight = 144; // 144px (logo grande)
-      const badgeHeight = 63; // 63px
+      const badgeElement = document.getElementById('montesite-footer-badge');
+      const badgeHeight = badgeElement && badgeElement.offsetHeight > 0 ? badgeElement.offsetHeight : 0;
       const calculatedHeight = window.innerHeight - headerHeight - badgeHeight;
       setIframeHeight(`${calculatedHeight}px`);
     };
@@ -17,11 +18,33 @@ const Vitrine = () => {
     
     // Trava a rolagem da página
     document.body.style.overflow = "hidden";
+
+    // Observer para detectar quando o badge do MonteSite carregar
+    const badgeElement = document.getElementById('montesite-footer-badge');
+    let observer: MutationObserver | null = null;
+    
+    if (badgeElement) {
+      observer = new MutationObserver(() => {
+        calculateHeight();
+      });
+      
+      observer.observe(badgeElement, {
+        childList: true,
+        subtree: true,
+        attributes: true
+      });
+    }
+
+    // Fallback: recalcula após 3 segundos caso o badge carregue com atraso
+    const fallbackTimeout = setTimeout(() => {
+      calculateHeight();
+    }, 3000);
     
     return () => {
       window.removeEventListener("resize", calculateHeight);
-      // Restaura a rolagem ao sair da página
       document.body.style.overflow = "auto";
+      if (observer) observer.disconnect();
+      clearTimeout(fallbackTimeout);
     };
   }, []);
 
