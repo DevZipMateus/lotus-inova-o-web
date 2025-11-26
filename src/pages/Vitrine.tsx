@@ -15,7 +15,14 @@ const Vitrine = () => {
     calculateHeight();
     window.addEventListener("resize", calculateHeight);
     
-    return () => window.removeEventListener("resize", calculateHeight);
+    // Trava a rolagem da página
+    document.body.style.overflow = "hidden";
+    
+    return () => {
+      window.removeEventListener("resize", calculateHeight);
+      // Restaura a rolagem ao sair da página
+      document.body.style.overflow = "auto";
+    };
   }, []);
 
   return (
