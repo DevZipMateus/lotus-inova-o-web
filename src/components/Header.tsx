@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import lotusLogo from "@/assets/lotus-logo-real.png";
 const Header = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  const isHomePage = location.pathname === "/";
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -13,17 +18,33 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-      setIsMobileMenuOpen(false);
+    if (!isHomePage) {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          const offset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
     }
+    setIsMobileMenuOpen(false);
   };
   return <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md transition-all duration-300">
       <nav className="container mx-auto px-4 py-4">
@@ -42,6 +63,9 @@ const Header = () => {
             </button>
             <button onClick={() => scrollToSection("servicos")} className="text-foreground hover:text-primary transition-colors font-medium">
               Serviços
+            </button>
+            <button onClick={() => navigate("/vitrine")} className="text-foreground hover:text-primary transition-colors font-medium">
+              Vitrine
             </button>
             <button onClick={() => scrollToSection("contato")} className="text-foreground hover:text-primary transition-colors font-medium">
               Contato
@@ -68,6 +92,9 @@ const Header = () => {
               </button>
               <button onClick={() => scrollToSection("servicos")} className="text-foreground hover:text-primary transition-colors font-medium text-left">
                 Serviços
+              </button>
+              <button onClick={() => { navigate("/vitrine"); setIsMobileMenuOpen(false); }} className="text-foreground hover:text-primary transition-colors font-medium text-left">
+                Vitrine
               </button>
               <button onClick={() => scrollToSection("contato")} className="text-foreground hover:text-primary transition-colors font-medium text-left">
                 Contato
