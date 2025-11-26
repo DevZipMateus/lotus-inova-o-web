@@ -22,9 +22,8 @@ const Vitrine = () => {
     <div className="w-full h-screen overflow-hidden">
       <Header />
       <div 
-        className="w-full" 
+        className="w-full pt-20" 
         style={{ 
-          marginTop: "80px",
           height: iframeHeight
         }}
       >
