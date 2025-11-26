@@ -6,7 +6,7 @@ const Vitrine = () => {
 
   useEffect(() => {
     const calculateHeight = () => {
-      const headerHeight = 80; // 80px
+      const headerHeight = 144; // 144px (logo grande)
       const badgeHeight = 63; // 63px
       const calculatedHeight = window.innerHeight - headerHeight - badgeHeight;
       setIframeHeight(`${calculatedHeight}px`);
@@ -24,7 +24,7 @@ const Vitrine = () => {
       <div 
         className="w-full" 
         style={{ 
-          marginTop: "80px",
+          marginTop: "144px",
           height: iframeHeight,
           overflow: "hidden"
         }}
