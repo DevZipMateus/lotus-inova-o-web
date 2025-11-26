@@ -19,12 +19,14 @@ const Vitrine = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen overflow-hidden">
+    <div className="w-full overflow-hidden" style={{ height: "100vh" }}>
       <Header />
       <div 
-        className="w-full pt-20" 
+        className="w-full" 
         style={{ 
-          height: iframeHeight
+          marginTop: "80px",
+          height: iframeHeight,
+          overflow: "hidden"
         }}
       >
         <iframe 
@@ -32,7 +34,8 @@ const Vitrine = () => {
           style={{
             width: "100%",
             height: "100%",
-            border: "none"
+            border: "none",
+            display: "block"
           }}
           title="Demonstração de Vitrine"
         />
