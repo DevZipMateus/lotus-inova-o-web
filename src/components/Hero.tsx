@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Droplet, Shield, Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-purifier.jpg";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  
   const scrollToContact = () => {
     const element = document.getElementById("contato");
     if (element) {
@@ -68,10 +71,10 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              onClick={scrollToContact}
+              onClick={() => navigate("/vitrine")}
               className="border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8"
             >
-              Fale conosco
+              Ver vitrine de produtos
             </Button>
           </div>
         </div>
