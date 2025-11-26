@@ -19,7 +19,7 @@ const Vitrine = () => {
   }, []);
 
   return (
-    <div className="w-full overflow-hidden" style={{ height: "100vh" }}>
+    <div className="w-full overflow-hidden" style={{ height: "100vh", overflow: "hidden" }}>
       <Header />
       <div 
         className="w-full" 
