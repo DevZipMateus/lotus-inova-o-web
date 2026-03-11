@@ -5,7 +5,7 @@ import filtersImage from "@/assets/service-filters.jpg";
 import installationImage from "@/assets/service-installation-new.jpg";
 import sanitizationImage from "@/assets/service-sanitization.jpg";
 import maintenanceImage from "@/assets/service-maintenance-new.jpg";
-import watercoolerImage from "@/assets/service-watercooler.jpg";
+import watercoolerImage from "@/assets/vitrine-bg.jpg";
 
 const Services = () => {
   const services = [
