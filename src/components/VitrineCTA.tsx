@@ -1,12 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { ShoppingBag, Eye, Star, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import vitrineBg from "@/assets/vitrine-bg.jpg";
 
 const VitrineCTA = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5 relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img src={vitrineBg} alt="Produtos Europa" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-background/85 backdrop-blur-sm"></div>
+      </div>
 ...
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
